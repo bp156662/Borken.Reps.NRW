@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replica-Kleidung</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0e0e0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+            background-image: url('background.jpg'); /* Fügen Sie den Dateipfad zum Hintergrundbild ein */
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            animation: blink 1s infinite; /* Blinkende Animation */
+        }
+        main {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        .advertisement {
+            width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Replica-Borken</h1>
+        <p>Alles was ihr braucht und wollt</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Schuhe</h2>
+            <p>
+                Jede Marke und Collabs
+            </p>
+        </section>
+        
+        <section>
+            <h2>Bekleidung & Anzüge</h2>
+            <p>
+                Jede Marke, Basics, Trikots und Trainiungsanzüge
+            </p>
+        </section>
+        
+        <section>
+            <h2>Jacken & Westen</h2>
+            <p>
+                Monclair, Canada Goose, EA7 und so weiter damit ihr nicht friert 
+            </p>
+        </section>
+        
+        <aside class="advertisement">
+            <img id="advertisementImage" src="bild1.jpg" alt="Kleidungsstück">
+        </aside>
+    </main>
+
+    <script>
+        const advertisementImages = ["bild1.jpg", "bild2.jpg", "bild3.jpg", "bild4.jpg"];
+        let currentIndex = 0;
+
+        function changeAdvertisement() {
+            document.getElementById("advertisementImage").src = advertisementImages[currentIndex];
+            currentIndex = (currentIndex + 1) % advertisementImages.length;
+        }
+
+        setInterval(changeAdvertisement, 4000);
+    </script>
+
+    <style>
+        @keyframes blink {
+            0%, 100% {
+                font-size: 3em;
+                opacity: 1;
+            }
+            50% {
+                font-size: 3.5em;
+                opacity: 0.5;
+            }
+        }
+    </style>
+</body>
+</html>
